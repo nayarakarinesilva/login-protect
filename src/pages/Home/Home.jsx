@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import Dashboard from "../Dashboard/Dashboard";
 
 const Home = () => {
   const { user, signout } = useAuth();
@@ -11,7 +12,7 @@ const Home = () => {
 
   const navigate = useNavigate();
   return (
-    <Box sx={{ background: "#ffffffbe" }}>
+    <Box>
       <Box
         sx={{
           display: "flex",
@@ -19,6 +20,7 @@ const Home = () => {
           padding: "20px",
           alignItems: "center",
           justifyContent: "space-between",
+          background: "#ffffffbe",
         }}
       >
         <Box>
@@ -33,6 +35,7 @@ const Home = () => {
           />
         </Box>
       </Box>
+      <Dashboard />
     </Box>
   );
 };
