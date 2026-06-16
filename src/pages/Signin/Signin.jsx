@@ -4,6 +4,7 @@ import Input from "../../components/Input/Input";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import CustomButton from "../../components/CustomButton/CustomButton";
+import Title from "../../components/Title/Title";
 
 const Signin = () => {
   const { signin } = useAuth();
@@ -53,11 +54,7 @@ const Signin = () => {
           borderRadius: "5px",
         }}
       >
-        <Typography
-          sx={{ fontSize: "22px", fontWeight: 600, color: "#676767" }}
-        >
-          Sistema de Login
-        </Typography>
+        <Title text="Login" />
         <Box
           sx={{
             display: "flex",
@@ -91,9 +88,21 @@ const Signin = () => {
           <Box>
             <CustomButton text="Entrar" onClick={handleLogin} />
           </Box>
-          <Box sx={{ marginTop: "30px" }}>
+          <Box sx={{ marginTop: "30px", textAlign: "center" }}>
             <Typography>Não tem conta?</Typography>
-            <Link to="/signup">Registre-se</Link>
+
+            <Typography>
+              <Link
+                to="/signin"
+                style={{
+                  color: "#7C3AED",
+                  fontWeight: 500,
+                }}
+                to="/signup"
+              >
+                Registre-se
+              </Link>
+            </Typography>
           </Box>
         </Box>
       </Box>
