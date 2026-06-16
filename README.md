@@ -1,4 +1,4 @@
-# 📌 Quadro Kanban
+# Login Protect + Quadro Kanban
 
 Aplicação desenvolvida em React para gerenciamento de tarefas utilizando a metodologia Kanban. O sistema conta com autenticação de usuários, proteção de rotas e persistência de dados através do Local Storage.
 
