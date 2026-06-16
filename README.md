@@ -1,16 +1,97 @@
-# React + Vite
+# 📌 Quadro Kanban
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação desenvolvida em React para gerenciamento de tarefas utilizando a metodologia Kanban. O sistema conta com autenticação de usuários, proteção de rotas e persistência de dados através do Local Storage.
 
-Currently, two official plugins are available:
+## ✨ Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### 🔐 Autenticação
+- Cadastro de novos usuários.
+- Login com validação de credenciais.
+- Persistência da sessão utilizando Local Storage.
+- Logout da aplicação.
+- Exibição do nome do usuário autenticado.
 
-## React Compiler
+### 🛡️ Proteção de Rotas
+- Apenas usuários autenticados podem acessar o quadro Kanban.
+- Usuários não autenticados são redirecionados para a tela de login.
+- Controle de acesso realizado com Context API e React Router.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 📋 Quadro Kanban
+- Criação de novas tarefas.
+- Exclusão de tarefas.
+- Organização das tarefas em colunas:
+  - Todo
+  - Doing
+  - Done
+- Movimentação de tarefas entre colunas através de Drag and Drop.
+- Atualização automática do status das tarefas.
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologias Utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- React Router DOM
+- Context API
+- Material UI
+- Local Storage
+
+## 📂 Estrutura do Projeto
+
+```text
+src/
+└── assets/
+|    └── kanban.png
+├── components/
+│   ├── CustomButton/
+│   └── Input/
+│   └── Title/
+├── context/
+│   └── Auth.jsx
+├── hooks/
+│   ├── useAuth.js
+├── pages/
+│   └── Dashboard/
+│       └── components/
+|             └── ColumnsCard/
+│             └──  TaskCard/
+│       └── hooks/
+|             └── useTaskManager.js
+│   ├── Home/
+│   ├── Signin/
+│   ├── Signup/
+├── routes/
+│   └── PrivateRoute.jsx
+│   └── routes.jsx
+
+```
+
+## 💾 Persistência de Dados
+
+A aplicação utiliza o Local Storage para armazenar:
+
+```javascript
+user_db     // Usuários cadastrados
+user_token  // Usuário autenticado
+```
+
+## 🚀 Fluxo da Aplicação
+
+1. O usuário realiza o cadastro.
+2. Os dados são armazenados no Local Storage.
+3. O usuário efetua login.
+4. O sistema cria uma sessão local.
+5. Após autenticado, o usuário pode acessar o Quadro Kanban.
+6. As tarefas podem ser criadas, movidas entre colunas e removidas.
+
+## 📚 Objetivo
+
+Este projeto foi desenvolvido para praticar conceitos de:
+
+- React
+- Hooks customizados
+- Context API
+- React Router
+- Proteção de rotas
+- Gerenciamento de estado
+- Drag and Drop
+- Persistência de dados com Local Storage
+- Componentização
