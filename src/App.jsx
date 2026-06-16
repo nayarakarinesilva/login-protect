@@ -1,17 +1,17 @@
-import { useState } from 'react'
+import { useState } from "react";
 
-import './App.css'
-import GlobalStyle from './global'
-import RoutesApp from './routes/routes.jsx'
+import "./App.css";
+import GlobalStyle from "./global";
+import RoutesApp from "./routes/routes.jsx";
+import { AuthProvider } from "./context/Auth.jsx";
 
 function App() {
-
   return (
-    <>
-     <RoutesApp />
-     <GlobalStyle />
-    </>
-  )
+    <AuthProvider>
+      <RoutesApp />
+      <GlobalStyle />
+    </AuthProvider>
+  );
 }
 
-export default App
+export default App;

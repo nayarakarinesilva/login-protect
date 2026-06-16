@@ -4,9 +4,10 @@ import Signin from "../pages/Signin/Signin";
 import Signup from "../pages/Signup/Signup";
 import Home from "../pages/Home/Home";
 import PrivateRoute from "./PrivateRoute";
+import useAuth from "../hooks/useAuth";
 
 const RoutesApp = ({ Item }) => {
-  const signed = false;
+  const { signed } = useAuth();
 
   return (
     <BrowserRouter>
