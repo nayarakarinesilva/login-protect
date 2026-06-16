@@ -43,7 +43,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   //Cadastro
-  const signup = (email, password) => {
+  const signup = (email, password, name) => {
     const userStorage = JSON.parse(localStorage.getItem("user_db"));
 
     const hasUser = userStorage?.filter((user) => user.email === email);
@@ -54,9 +54,9 @@ export const AuthProvider = ({ children }) => {
     let newUser;
     //Caso já tenha ele junta
     if (userStorage) {
-      newUser = [...userStorage, { email, password }];
+      newUser = [...userStorage, { email, password, name }];
     } else {
-      newUser = [{ email, password }];
+      newUser = [{ email, password, name }];
     }
     console.log("Salvando:", newUser);
     localStorage.setItem("user_db", JSON.stringify(newUser));
