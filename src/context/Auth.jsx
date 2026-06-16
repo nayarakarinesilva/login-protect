@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
     const hasUser = userStorage?.filter((user) => user.email === email);
 
     if (!hasUser?.length) {
-      ("Usuário não cadastrado");
+      return "Usuário não cadastrado";
     }
 
     if (hasUser[0].password !== password) {
@@ -56,7 +56,7 @@ export const AuthProvider = ({ children }) => {
     } else {
       newUser = [{ email, password }];
     }
-
+    console.log("Salvando:", newUser);
     localStorage.setItem("user_db", JSON.stringify(newUser));
     return;
   };
