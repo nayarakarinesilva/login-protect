@@ -8,7 +8,7 @@ const Home = () => {
   const { signout } = useAuth();
   const navigate = useNavigate();
   return (
-    <Box>
+    <Box sx={{ display: "flex", flexDirection: "column", padding:"20px" }}>
       <Typography>Home</Typography>
       <CustomButton text="Sair" onClick={() => [signout(), navigate("/")]} />
     </Box>

@@ -4,7 +4,7 @@ import React from "react";
 const CustomButton  = ({ text, onClick }) => {
   return (
     <Button
-      sx={{ background: "#152974", color: "#fff" }}
+      sx={{ width:"150px", background: "#152974", color: "#fff" }}
       onClick={onClick}
     >
       {text}

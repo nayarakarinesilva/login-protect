@@ -3,13 +3,14 @@ import React from "react";
 
 const Input = ({ type, placeholder, value, onChange, label }) => {
   return (
-    <Box>
+    <Box sx={{ width: "100%" }}>
       <Typography>{label}</Typography>
       <TextField
         type={type}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        sx={{ width: "100%" }}
       />
     </Box>
   );

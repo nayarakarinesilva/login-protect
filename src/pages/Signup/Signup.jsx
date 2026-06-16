@@ -58,38 +58,53 @@ const Signup = () => {
         }}
       >
         <Typography
-          sx={{ fontSize: "18px", fontWeight: 600, color: "#676767" }}
+          sx={{ fontSize: "22px", fontWeight: 600, color: "#676767" }}
         >
           Cadastre-se
         </Typography>
-        <Input
-          label="E-mail"
-          type="email"
-          placeholder={"E-mail"}
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <Input
-          label="Confirmar e-mail"
-          type="email"
-          placeholder={"E-mail"}
-          value={confirmEmail}
-          onChange={(e) => setConfirmEmail(e.target.value)}
-        />
-        <Input
-          label="Senha"
-          type="password"
-          placeholder={"Senha"}
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        {error}
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+            gap: 2,
+            width: "300px",
+            marginBottom: "10px",
+          }}
+        >
+          <Input
+            label="E-mail"
+            type="email"
+            placeholder={"E-mail"}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <Input
+            label="Confirmar e-mail"
+            type="email"
+            placeholder={"E-mail"}
+            value={confirmEmail}
+            onChange={(e) => setConfirmEmail(e.target.value)}
+          />
+          <Input
+            label="Senha"
+            type="password"
+            placeholder={"Senha"}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </Box>
+
+        <Typography sx={{ color: "red" }}> {error}</Typography>
         <Box>
           <Box>
             <CustomButton text="Inscrever" onClick={handleSignup} />
           </Box>
-          <Typography>Não tem senha</Typography>
-          <Link to="/signin">Voltar</Link>
+          <Box sx={{ marginTop: "30px" }}>
+            {/* <Typography>Não tem senha</Typography> */}
+            <Link to="/signin">Voltar Login</Link>
+          </Box>
         </Box>
       </Box>
     </Box>

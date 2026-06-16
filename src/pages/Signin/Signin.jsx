@@ -54,31 +54,47 @@ const Signin = () => {
         }}
       >
         <Typography
-          sx={{ fontSize: "18px", fontWeight: 600, color: "#676767" }}
+          sx={{ fontSize: "22px", fontWeight: 600, color: "#676767" }}
         >
           Sistema de Login
         </Typography>
-        <Input
-          label="E-mail"
-          type="email"
-          placeholder={"E-mail"}
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <Input
-          label="Senha"
-          type="password"
-          placeholder={"Senha"}
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        {error}
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+            gap: 2,
+            width: "300px",
+            marginBottom: "10px",
+          }}
+        >
+          <Input
+            label="E-mail"
+            type="email"
+            placeholder={"E-mail"}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <Input
+            label="Senha"
+            type="password"
+            placeholder={"Senha"}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </Box>
+        <Box>
+          <Typography sx={{ color: "red" }}> {error}</Typography>
+        </Box>
         <Box>
           <Box>
             <CustomButton text="Entrar" onClick={handleLogin} />
           </Box>
-          <Typography>Não tem senha</Typography>
-          <Link to="/signup">Registre-se</Link>
+          <Box sx={{ marginTop: "30px" }}>
+            <Typography>Não tem conta?</Typography>
+            <Link to="/signup">Registre-se</Link>
+          </Box>
         </Box>
       </Box>
     </Box>

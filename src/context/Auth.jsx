@@ -22,6 +22,7 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
+  //Login
   const signin = (email, password) => {
     const userStorage = JSON.parse(localStorage.getItem("user_db"));
     const hasUser = userStorage?.filter((user) => user.email === email);
@@ -41,6 +42,7 @@ export const AuthProvider = ({ children }) => {
     setUser(hasUser[0]);
   };
 
+  //Cadastro
   const signup = (email, password) => {
     const userStorage = JSON.parse(localStorage.getItem("user_db"));
 

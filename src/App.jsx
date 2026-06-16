@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-import "./App.css";
 import GlobalStyle from "./global";
 import RoutesApp from "./routes/routes.jsx";
 import { AuthProvider } from "./context/Auth.jsx";
