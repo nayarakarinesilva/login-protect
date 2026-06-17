@@ -42,6 +42,14 @@ const Signup = () => {
         flexDirection: "column",
         gap: 10,
         height: "100vh",
+         background: `linear-gradient(
+      135deg,
+      #F9A8D4,
+      #E9A8FF,
+      #C4B5FD,
+      #93C5FD,
+      #60A5FA
+    )`,
       }}
     >
       <Box

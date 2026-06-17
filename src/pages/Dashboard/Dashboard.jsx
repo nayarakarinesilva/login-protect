@@ -32,7 +32,7 @@ const Dashboard = () => {
       />
       <CustomButton text="Adicionar +" onClick={handleAddTask} />
 
-      <Box sx={{ display: "flex", height: "80vh" }}>
+      <Box sx={{ display: "flex", height: "80vh", gap:"15px" }}>
         {columns.map((colum) => {
           // filtra só as tasks daquela coluna
           const columFilter = tasks.filter((task) => task.status === colum);

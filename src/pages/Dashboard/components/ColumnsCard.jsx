@@ -12,6 +12,14 @@ const ColumnsCard = ({
   handleDrop,
   handleDelete,
 }) => {
+  const statusColors = {
+    todo: "#9c1ac4",
+    doing: "#068d82",
+    done: "#bd0d79",
+  };
+
+  const color = statusColors[title.toLowerCase()];
+
   return (
     <Box
       sx={{
@@ -20,6 +28,8 @@ const ColumnsCard = ({
         justifyContent: "flex-start",
         height: "auto",
         border: "1px solid #ccc",
+        borderTop: `24px solid ${color} `,
+        borderRadius: "10px",
         width: "250px",
         padding: "10px",
         gap: "10px",
@@ -35,6 +45,7 @@ const ColumnsCard = ({
           key={task.id}
           text={task.title}
           task={task}
+          color={color}
           setDraggedTask={setDraggedTask}
           handleDelete={handleDelete}
         />

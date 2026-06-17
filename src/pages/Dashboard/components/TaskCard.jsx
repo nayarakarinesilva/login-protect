@@ -1,9 +1,16 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 import useTaskManager from "../hooks/useTaskManager";
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
-const TaskCard = ({ icon: Icon, text, task, setDraggedTask, handleDelete }) => {
+const TaskCard = ({
+  icon: Icon,
+  text,
+  task,
+  setDraggedTask,
+  handleDelete,
+  color,
+}) => {
   return (
     <Box
       draggable
@@ -12,17 +19,15 @@ const TaskCard = ({ icon: Icon, text, task, setDraggedTask, handleDelete }) => {
         display: "flex",
         justifyContent: "space-around",
         alignItems: "flex-start",
-        border: "solid 1px #7655f7",
+        border: `solid 1px ${color}`,
         height: "80px",
         padding: "15px",
-        cursor: "pointer"
+        cursor: "pointer",
       }}
     >
       <Typography>{text}</Typography>
-      <Typography
-        onClick={() => handleDelete(task.id)}
-      >
-        <DeleteForeverIcon sx={{color:"#896dfc"}} />
+      <Typography onClick={() => handleDelete(task.id)}>
+        <DeleteForeverIcon sx={{ color: "#896dfc" }} />
       </Typography>
     </Box>
   );
