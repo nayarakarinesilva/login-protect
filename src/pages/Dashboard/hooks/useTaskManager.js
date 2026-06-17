@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 export default function useTaskManager() {
-
   const [draggedTask, setDraggedTask] = useState(null);
   const [titleTask, setTitleTask] = useState("");
 
@@ -14,10 +13,12 @@ export default function useTaskManager() {
   const handleAddTask = () => {
     const newTask = {
       id: Date.now(),
-      title: titleTask,
+      title: titleTask.trim(),
       status: "Todo",
     };
     setTasks([...tasks, newTask]);
+
+    setTitleTask("");
   };
 
   //DROP (quando solta a task em outra coluna)

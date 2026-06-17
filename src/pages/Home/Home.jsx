@@ -1,7 +1,7 @@
 import React from "react";
 import useAuth from "../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
-import { Box, Typography } from "@mui/material";
+import { Avatar, Box, Typography } from "@mui/material";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import Dashboard from "../Dashboard/Dashboard";
@@ -16,21 +16,34 @@ const Home = () => {
       <Box
         sx={{
           display: "flex",
-          flexDirection: "row",
-          padding: "20px",
-          alignItems: "center",
           justifyContent: "space-between",
-          background: "#ffffffbe",
+          alignItems: "center",
+          p: 2,
+          boxShadow: "0 2px 10px rgba(0,0,0,0.08)",
         }}
       >
-        <Box>
-          <Typography>Olá, {nameWelcome}.</Typography>
-          <Typography>Seja bem vindo(a)!</Typography>
+        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+          <Avatar sx={{ background: "#a28aff" }}>
+            {nameWelcome?.charAt(0).toUpperCase()}
+          </Avatar>
+
+          <Box sx={{ color: "#333" }}>
+            <Typography variant="h6" fontWeight="bold">
+              Olá, {nameWelcome}
+            </Typography>
+
+            <Typography variant="body2">
+              Gerencie suas tarefas de forma simples e eficiente
+            </Typography>
+          </Box>
         </Box>
         <Box>
           <CustomButton
             text="Sair"
-            onClick={() => [signout(), navigate("/")]}
+            onClick={() => {
+              signout();
+              navigate("/");
+            }}
             icon={<ExitToAppIcon />}
           />
         </Box>
