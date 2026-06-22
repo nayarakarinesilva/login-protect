@@ -58,7 +58,7 @@ export const AuthProvider = ({ children }) => {
     } else {
       newUser = [{ email, password, name }];
     }
-    console.log("Salvando:", newUser);
+    // console.log("Salvando:", newUser);
     localStorage.setItem("user_db", JSON.stringify(newUser));
     return;
   };

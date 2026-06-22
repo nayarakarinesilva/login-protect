@@ -23,8 +23,6 @@ const Dashboard = () => {
     handleAddTask();
   };
 
-  console.log("titleTask", titleTask);
-
   return (
     <Box
       sx={{
