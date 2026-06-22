@@ -48,6 +48,7 @@ src/
 │   └── Auth.jsx
 ├── hooks/
 │   ├── useAuth.js
+|   |── useAuth.js
 ├── pages/
 │   └── Dashboard/
 │       └── components/
