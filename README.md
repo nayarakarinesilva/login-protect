@@ -96,3 +96,5 @@ Este projeto foi desenvolvido para praticar conceitos de:
 - Drag and Drop
 - Persistência de dados com Local Storage
 - Componentização
+
+Link do deploy: https://login-protect.vercel.app/
